@@ -10,6 +10,9 @@ export const useStyles = createStyles(({ css, cx }, { fontWeight, fontFamily, te
             color: ${color};
             font-size: ${fontSize};
         }
+        .ant-input-data-count {
+            display: none !important;
+        }   
   `);
     return {
         textArea,

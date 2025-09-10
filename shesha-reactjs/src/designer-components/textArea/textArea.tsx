@@ -127,7 +127,13 @@ const TextAreaComponent: IToolboxComponent<ITextAreaComponentProps, ITextFieldCo
             ? <JsonTextArea value={value} textAreaProps={textAreaProps} customEventHandler={customEvents} />
             : model.readOnly
               ? <ReadOnlyDisplayFormItem value={value} style={{ padding: 8, ...finalStyle }} type='textArea' />
-              : <Input.TextArea rows={2} {...textAreaProps} disabled={model.readOnly} {...customEvents} value={value} onChange={onChangeInternal} />;
+              : <div>
+                <Input.TextArea rows={2} {...textAreaProps} disabled={model.readOnly} {...customEvents} value={value} onChange={onChangeInternal} />
+               {textAreaProps.showCount && 
+               <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: -15}}>
+                  <span>{value?.length ?? 0}</span>
+               </div>}
+              </div>
         }}
       </ConfigurableFormItem>
     );
