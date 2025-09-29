@@ -329,7 +329,7 @@ export const getSettings = (data: any) => {
                 hidden: {
                   _code: 'return getSettingValue(data?.canEditInline) === "no";',
                   _mode: 'code',
-                  _value: false
+                  _value: false,
                 } as any,
                 inputs: [
                   {
@@ -340,8 +340,8 @@ export const getSettings = (data: any) => {
                     label: "Show Edit Icon",
                     jsSetting: true,
                     value: 'checked',
-                  }
-                ]
+                  },
+                ],
               })
               .addSettingsInputRow({
                 parentId: dataTabId,
