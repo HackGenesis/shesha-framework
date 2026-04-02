@@ -164,6 +164,8 @@ const StoredFilesProvider: FC<PropsWithChildren<IStoredFilesProviderProps>> = ({
         const fileList = filesReducer(result as IStoredFile[]);
 
         dispatch(fetchFileListSuccessAction(fileList));
+        // Notify form field of the fetched files to support required field validation
+        onChange?.(fileList, false);
       } else {
         dispatch(fetchFileListErrorAction());
       }
